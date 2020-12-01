@@ -13,18 +13,18 @@ The task is to implement a simple forum functionality. Any questions regarding t
 
 # G
 Use following techs:
-- [ ] React
-- [ ] React Components
+- [x] React
+- [x] React Components
 - [ ] Styled Components
-- [ ] useState
-- [ ] useEffect
+- [x] useState
+- [x] useEffect
 - [ ] Dynamic routes
-- [ ] localStorage (Session Storage)
+- [x] localStorage (Session Storage)
 
 # VG
 Use following techs:
 - [ ] Styled Components Inheritance
-- [ ] useContext (or useReducer)
+- [x] useContext (or useReducer)
 - [ ] Next.js (optional, but if you use it...)
     - [ ] Either getServerSideProps or getStaticProps must be used
     - [ ] Deploy to Vercel
@@ -32,22 +32,22 @@ Use following techs:
 # Pages
 ## Register page
 Register page should include a form with the following fields:
-- [ ] email
-- [ ] password
-- [ ] firstname
-- [ ] lastname
-- [ ] country (fetch list of countries from the back-end. See API below)
+- [x] email
+- [x] password
+- [x] firstname
+- [x] lastname
+- [x] country (fetch list of countries from the back-end. See API below)
 
-- [ ] When the user has successfully registered, they should automatically navigate
+- [x] When the user has successfully registered, they should automatically navigate
 to the login page.
 
 ## Login page
 Login page must include:
-- [ ] Email
-- [ ] Password
+- [x] Email
+- [x] Password
 
-- [ ] The form should be able to handle wrong credentials. "Unable to log in with provided credentials."
-- [ ] When the user has successfully registered, they should automatically navigate to the Home Page
+- [x] The form should be able to handle wrong credentials. "Unable to log in with provided credentials."
+- [x] When the user has successfully registered, they should automatically navigate to the Home Page
 
 ## Home page
 - [ ] Should some generic text about the forum
