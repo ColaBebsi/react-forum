@@ -18,7 +18,7 @@ Use following techs:
 - [ ] Styled Components
 - [x] useState
 - [x] useEffect
-- [ ] Dynamic routes
+- [x] Dynamic routes
 - [x] localStorage (Session Storage)
 
 # VG
@@ -50,27 +50,27 @@ Login page must include:
 - [x] When the user has successfully registered, they should automatically navigate to the Home Page
 
 ## Home page
-- [ ] Should some generic text about the forum
-- [ ] Add a link that let the user can navigate to Post List Page
+- [x] Should some generic text about the forum
+- [x] Add a link that let the user can navigate to Post List Page
 - [ ] Should show the user account
 
 ## Post List Page
-- [ ] List all posts
-- [ ] When the users click on a post they should navigate to the detail page for
+- [x] List all posts
+- [x] When the users click on a post they should navigate to the detail page for
       that post
-- [ ] Add link so user can navigate to Post Create Page
+- [x] Add link so user can navigate to Post Create Page
 
 ## Post Create Page
-- [ ] This page should render a form where the user can create a new Post.
+- [x] This page should render a form where the user can create a new Post.
 The form should contain:
-- [ ] title
-- [ ] content
-- [ ] category (Please see API below for list of all categories)
+- [x] title
+- [x] content
+- [x] category (Please see API below for list of all categories)
 
-- [ ] When a post created successfully, the user should automatically navigate to
+- [x] When a post created successfully, the user should automatically navigate to
       the Post List Page
       
 ## Post Detail Page
-- [ ] This page should render all of the data that is returned from the API for Post Detail.
-- [ ] A link to navigate to all posts should be present.
+- [x] This page should render all of the data that is returned from the API for Post Detail.
+- [x] A link to navigate to all posts should be present.
 - [ ] (VG Option) Add possibility to add a response

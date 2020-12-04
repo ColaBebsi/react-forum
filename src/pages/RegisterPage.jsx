@@ -84,7 +84,7 @@ export const RegisterPage = () => {
                 </label>
                 <label>
                     <p>Country</p>
-                    <select name="countriesList" onChange={handleOnChange}>
+                    <select name="country" onChange={handleOnChange}>
                         <option value="">--Please select an option--</option>
                         {countriesList &&
                             countriesList.map(country => (
