@@ -1,7 +1,7 @@
 const ROOT_URL = `https://lab.willandskill.eu`;
 const REGISTER_URL = `${ROOT_URL}/api/v1/auth/users/`;
 const LOGIN_URL = `${ROOT_URL}/api/v1/auth/api-token-auth/`;
-const COUNTRIES_LIST_URL = `${ROOT_URL}/api/v1/countries/`;
+const COUNTRIES_URL = `${ROOT_URL}/api/v1/countries/`;
 const CATEGORIES_URL = `${ROOT_URL}/api/v1/forum/categories/`;
 const ME_URL = `${ROOT_URL}/api/v1/me/`;
 
@@ -30,7 +30,7 @@ export default class UserKit {
     };
 
     getCountries = () => {
-        return fetch(COUNTRIES_LIST_URL, {
+        return fetch(COUNTRIES_URL, {
             headers: this.getPublicHeaders(),
         });
     };

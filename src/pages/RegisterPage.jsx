@@ -10,9 +10,6 @@ const formReducer = (state, event) => {
 };
 
 export const RegisterPage = () => {
-    const ROOT_URL = `https://lab.willandskill.eu`;
-    const COUNTRIES_URL = `${ROOT_URL}/api/v1/countries/`;
-
     const [formData, setFormData] = useReducer(formReducer, {});
     const [countriesList, setCountriesList] = useState([]);
     const [status, setStatus] = useState("");
@@ -42,7 +39,8 @@ export const RegisterPage = () => {
     };
 
     useEffect(() => {
-        fetch(COUNTRIES_URL)
+        userKit
+            .getCountries()
             .then(res => res.json())
             .then(({ results }) => setCountriesList(results));
         // eslint-disable-next-line react-hooks/exhaustive-deps

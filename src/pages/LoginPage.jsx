@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { Button } from "../components/Button";
+import { Header } from "../components/Header";
 import UserKit from "../data/UserKit";
 
 export const LoginPage = () => {
     const [accessToken, setAccessToken] = useState(null);
     const [status, setStatus] = useState("");
     const [formData, setFormData] = useState({
-        email: "kuhiq@mailinator.com",
-        password: "Pa$$w0rd!",
+        email: "",
+        password: "",
     });
 
     const history = useHistory();
@@ -39,10 +41,9 @@ export const LoginPage = () => {
 
     return (
         <form onSubmit={handleOnSubmit}>
-            <fieldset>
-                <h1>Login Page</h1>
-                <h3>{status}</h3>
-            </fieldset>
+            <Header title="Login Page" status={status} >
+               
+            </Header>
 
             <fieldset>
                 <label>
@@ -66,7 +67,7 @@ export const LoginPage = () => {
             </fieldset>
 
             <fieldset>
-                <button>Login</button>
+                <Button text="Login" />
             </fieldset>
         </form>
     );
