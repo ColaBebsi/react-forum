@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Post } from "../../components/Post";
+import { PostDetailSection } from "../../components/PostDetailSection/PostDetailSection";
 import UserKit from "../../data/UserKit";
 
 export const PostDetailPage = props => {
@@ -26,7 +26,7 @@ export const PostDetailPage = props => {
                 <h1>Post Detail Page</h1>
             </fieldset>
 
-            <Post post={postDetail} />
+            <PostDetailSection post={postDetail} />
         </form>
     );
 };

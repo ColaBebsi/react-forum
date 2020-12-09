@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Button } from "../components/Button";
-import { Header } from "../components/Header";
+import LoginSection from "../components/LoginSection/LoginSection";
 import UserKit from "../data/UserKit";
 
 export const LoginPage = () => {
-    const [accessToken, setAccessToken] = useState(null);
     const [status, setStatus] = useState("");
     const [formData, setFormData] = useState({
         email: "",
@@ -15,7 +13,7 @@ export const LoginPage = () => {
     const history = useHistory();
     const userKit = new UserKit();
 
-    const handleOnSubmit = e => {
+    const handleSubmit = e => {
         e.preventDefault();
 
         userKit
@@ -23,7 +21,6 @@ export const LoginPage = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.token) {
-                    setAccessToken(data.token);
                     userKit.setToken(data.token);
 
                     history.push("/");
@@ -31,44 +28,28 @@ export const LoginPage = () => {
                     setStatus("Unable to login with provided credentials.");
                 }
             });
+
+        setTimeout(() => {
+            setStatus("");
+        }, 2000);
+
+        setFormData({
+            email: formData.email,
+            password: "",
+        });
     };
 
-    const handleOnChange = e => {
+    const handleChange = e => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    console.log(accessToken);
-
     return (
-        <form onSubmit={handleOnSubmit}>
-            <Header title="Login Page" status={status} >
-               
-            </Header>
-
-            <fieldset>
-                <label>
-                    <p>Email</p>
-                    <input
-                        type="email"
-                        name="email"
-                        onChange={handleOnChange}
-                        value={formData.email}
-                    />
-                </label>
-                <label>
-                    <p>Password</p>
-                    <input
-                        type="password"
-                        name="password"
-                        onChange={handleOnChange}
-                        value={formData.password}
-                    />
-                </label>
-            </fieldset>
-
-            <fieldset>
-                <Button text="Login" />
-            </fieldset>
-        </form>
+        <LoginSection
+            handleOnSubmit={handleSubmit}
+            handleOnChange={handleChange}
+            handleStatus={status}
+            email={formData.email}
+            password={formData.password}
+        />
     );
 };

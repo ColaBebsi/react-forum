@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { PostListSection } from "../../components/PostListSection/PostListSection";
 import UserKit from "../../data/UserKit";
 
 export const PostListPage = () => {
@@ -22,24 +23,25 @@ export const PostListPage = () => {
     console.log(postList);
 
     return (
-        <div>
-            <h1>Post List Page</h1>
-            <div>
-                <Link to={"/posts/create"}>Create post</Link>
-            </div>
-            <hr />
-            <div>
-                <ul>
-                    {postList &&
-                        postList.map((post, index) => (
-                            <li key={index} value={post.id}>
-                                <strong>{post.author ? post.author.email : "N/A"}</strong>:{" "}
-                                {post.title}
-                                <Link to={`/posts/${post.id}`}>Details...</Link>
-                            </li>
-                        ))}
-                </ul>
-            </div>
-        </div>
+        // <div>
+        //     <h1>Post List Page</h1>
+        //     <div>
+        //         <Link to={"/posts/create"}>Create post</Link>
+        //     </div>
+        //     <hr />
+        //     <div>
+        //         <ul>
+        //             {postList &&
+        //                 postList.map((post, index) => (
+        //                     <li key={index} value={post.id}>
+        //                         <strong>{post.author ? post.author.email : "N/A"}</strong>:{" "}
+        //                         {post.title}
+        //                         <Link to={`/posts/${post.id}`}>Details...</Link>
+        //                     </li>
+        //                 ))}
+        //         </ul>
+        //     </div>
+        // </div>
+        <PostListSection postList={postList} /> 
     );
 };

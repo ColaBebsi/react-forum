@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Post = ({ post }) => {
+export const PostDetailSection = ({ post }) => {
     // const author = post.author ? post.author : "null..";
 
     console.log(post);
@@ -39,3 +39,4 @@ export const Post = ({ post }) => {
         </>
     );
 };
+
