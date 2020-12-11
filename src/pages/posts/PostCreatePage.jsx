@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { PostCreateSection } from "../../components/PostCreateSection/PostCreateSection";
 import UserKit from "../../data/UserKit";
 
 export const PostCreatePage = () => {
@@ -23,7 +24,7 @@ export const PostCreatePage = () => {
 
     const history = useHistory();
 
-    const handleOnSubmit = e => {
+    const handleSubmit = e => {
         e.preventDefault();
 
         setFormData({
@@ -43,63 +44,31 @@ export const PostCreatePage = () => {
         });
     };
 
-    const handleTitleOnChange = e => {
+    const handleTitleChange = e => {
         setTitle(e.target.value);
     };
 
-    const handleContentOnChange = e => {
+    const handleContentChange = e => {
         setContent(e.target.value);
     };
 
-    const handleCategoryOnChange = e => {
+    const handleCategoryChange = e => {
         setCategory(e.target.value);
     };
 
     useEffect(() => {
         fetchCategoriesList();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
-        <form onSubmit={handleOnSubmit}>
-            <fieldset>
-                <h1>Post Create Page</h1>
-                <div>{status}</div>
-            </fieldset>
-
-            <fieldset>
-                <label>
-                    <p>Title</p>
-                    <input
-                        type="text"
-                        name="title"
-                        onChange={handleTitleOnChange}
-                    />
-                </label>
-                <label>
-                    <p>Content</p>
-                    <input
-                        type="text"
-                        name="content"
-                        onChange={handleContentOnChange}
-                    />
-                </label>
-                <label>
-                    <p>Category</p>
-                    <select name="category" onChange={handleCategoryOnChange}>
-                        <option value="gg">--Please select an option--</option>
-                        {categoriesList &&
-                            categoriesList.map((category, index) => (
-                                <option key={index} value={category.id}>
-                                    {category.title}
-                                </option>
-                            ))}
-                    </select>
-                </label>
-            </fieldset>
-
-            <fieldset>
-                <button>Create post</button>
-            </fieldset>
-        </form>
+        <PostCreateSection
+            handleOnSubmit={handleSubmit}
+            handleTitleOnChange={handleTitleChange}
+            handleContentOnChange={handleContentChange}
+            handleCategoryOnChange={handleCategoryChange}
+            status={status}
+            categoriesList={categoriesList}
+        />
     );
 };

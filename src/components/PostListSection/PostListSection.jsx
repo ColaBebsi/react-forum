@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container } from "../../globalStyles";
+import { Container } from "../../globalStyles";
 import {
     PostListPageSection,
     Title,
