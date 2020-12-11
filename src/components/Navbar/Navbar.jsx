@@ -53,6 +53,10 @@ export const Navbar = () => {
                             <NavItem>
                                 <NavLinks to="/">Home</NavLinks>
                             </NavItem>
+                      
+                            <NavItem>
+                                <NavLinks to="/posts">Posts</NavLinks>
+                            </NavItem>
 
                             <NavItem>
                                 <NavLinks to="/login">Login</NavLinks>

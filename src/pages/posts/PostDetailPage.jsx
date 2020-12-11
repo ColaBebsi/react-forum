@@ -19,14 +19,7 @@ export const PostDetailPage = props => {
         fetchPostDetail();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+    console.log(postDetail)
 
-    return (
-        <form>
-            <fieldset>
-                <h1>Post Detail Page</h1>
-            </fieldset>
-
-            <PostDetailSection post={postDetail} />
-        </form>
-    );
+    return <PostDetailSection post={postDetail} />;
 };
